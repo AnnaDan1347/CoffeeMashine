@@ -70,30 +70,34 @@ int main() {
 	return 0;
 }
 void showBalance(double balance) {
+	cout << "********************************" << endl;
 	cout << "BALANCE: " << balance << " BYN" << endl;
 }
 
 void showMainMenu() {
-	cout << "Dear customer, make your choice:" << endl;
-	cout << "1 " << endl;
-	cout << "2 " << endl;
-	cout << "3 " << endl;
-	cout << "4 " << endl;
-	cout << "5 " << endl;
+	cout << "********************************" << endl;
+	cout << "Dear customer, make your choice:" << endl << endl;
+	cout << "|1| Deposit money" << endl;
+	cout << "|2| Espresso          1 BYN" << endl;
+	cout << "|3| Cappuccino        1,5 BYN" << endl;
+	cout << "|4| Latte             1,5 BYN"<< endl;
+	cout << "|5| Service" << endl;
+	cout << "********************************" << endl;
 
 	//cout << "We are very sorry, but there are no cups left" << endl;
 	//cout << "5 Service" << endl;
 }
 
 void showInputBynMenu() {
+	cout << "********************************" << endl;
 	cout << "Please, deposit coins" << endl;
-	cout << "Pay attention that the coffee machine doesn't give change!"
-			<< endl;
-	cout << "1" << endl;
-	cout << "2" << endl;
-	cout << "3" << endl;
-	cout << "4" << endl;
-	cout << "5" << endl;
+	cout << "!!! Pay attention that the machine" << endl << "doesn't give change!" << endl << endl;
+	cout << "|1|  10 coins" << endl;
+	cout << "|2|  20 coins" << endl;
+	cout << "|3|  50 coins" << endl;
+	cout << "|4|  1 BYN"<< endl;
+	cout << "|5|  2 BYN" << endl;
+	cout << "********************************" << endl;
 }
 
 double inputBYN() {
