@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <cstdlib>
+#include <windows.h>
 
 using namespace std;
 
@@ -16,6 +17,7 @@ double inputBYN();
 void makeEspresso();
 void makeCappuccino();
 void makeLatte();
+void progressBar();
 
 int main() {
 
@@ -59,7 +61,7 @@ int main() {
 				cout << "Service" << endl;
 				break;
 			} else {
-				cout << "Input [1..5], please" << endl;
+				cout << "Input [1..5], please" << endl; //потом убрать
 				break;
 			}
 		} else {
@@ -69,7 +71,7 @@ int main() {
 				cout << "Service" << endl;
 				break;
 			} else {
-				cout << "Input [5], please" << endl;
+				cout << "Input [5], please" << endl; //потом убрать
 				break;
 			}
 			break;
@@ -91,9 +93,6 @@ void showMainMenu() {
 	cout << "|4| Latte             1,5 BYN" << endl;
 	cout << "|5| Service" << endl;
 	cout << "********************************" << endl;
-
-	//cout << "We are very sorry, but there are no cups left" << endl;
-	//cout << "5 Service" << endl;
 }
 
 void showMainMenuNoCups() {
@@ -144,7 +143,9 @@ double inputBYN() {
 }
 
 void makeEspresso() {
-	cout << "Espresso" << endl;
+	cout << "Coffee";
+	progressBar();
+	cout << "Here is the best Espresso in the city! Help yourself" << endl;
 }
 void makeCappuccino() {
 	cout << "Cappuccino" << endl;
@@ -152,3 +153,12 @@ void makeCappuccino() {
 void makeLatte() {
 	cout << "Latte" << endl;
 }
+void progressBar(){
+	for (int i = 0; i <= 10; i++){
+		cout << "." << flush;
+		Sleep(1000);
+		}
+	cout << endl;
+	}
+
+
