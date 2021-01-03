@@ -28,6 +28,7 @@ int main() {
 			showMainMenu();
 			cin >> userChoice;
 			if (userChoice == 1) {
+				showBalance(balance);
 				balance += inputBYN();
 			} else if (userChoice == 2) {
 				if (balance >= COST_ESPRESSO) {
@@ -103,7 +104,25 @@ void showInputBynMenu() {
 double inputBYN() {
 	showInputBynMenu();
 	double byn = 0.0;
-	cin >> byn;
+	int button = 0;
+	cin >> button;
+	switch (button){
+	case 1:
+		byn = 0.1;
+		break;
+	case 2:
+		byn = 0.2;
+		break;
+	case 3:
+		byn = 0.5;
+		break;
+	case 4:
+		byn = 1.0;
+		break;
+	case 5:
+		byn = 2.0;
+		break;
+	}
 	cout << "Ok, " << byn << " BYN is received" << endl;
 	return byn;
 }
