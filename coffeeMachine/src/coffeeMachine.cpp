@@ -18,6 +18,7 @@ double inputBYN();
 void makeEspresso();
 void makeCappuccino();
 void makeLatte();
+void makeCoffeeMenu();
 void progressBar();
 
 int main() {
@@ -145,27 +146,24 @@ double inputBYN() {
 	return byn;
 }
 
-void makeEspresso() {
+void makeCoffeeMenu() {
 	cout << "Please, wait for a few seconds!" << endl
-			<< "Your Espresso is being prepared now!" << endl;
-	progressBar();
-	cout << "Here is the best Espresso in the city! Help yourself!" << endl;
+				<< "Your coffee is being prepared now!" << endl;
+		progressBar();
+		cout << "Here is the best coffee in the city! Help yourself!" << endl;
+}
+void makeEspresso() {
+	makeCoffeeMenu();
 	system("pause>nul");
 }
 
 void makeCappuccino() {
-	cout << "Please, wait for a few seconds!" << endl
-			<< "Your Cappuccino is being prepared now!" << endl;
-	progressBar();
-	cout << "Here is the best Cappuccino in the city! Help yourself!" << endl;
+	makeCoffeeMenu();
 	system("pause>nul");
 }
 
 void makeLatte() {
-	cout << "Please, wait for a few seconds!" << endl
-			<< "Your Latte is being prepared now!" << endl;
-	progressBar();
-	cout << "Here is the best Latte in the city! Help yourself!" << endl;
+	makeCoffeeMenu();
 	system("pause>nul");
 }
 
