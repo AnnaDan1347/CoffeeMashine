@@ -9,6 +9,7 @@ using namespace std;
 #define COST_LATTE 1.5
 
 void showMainMenu();
+void showMainMenuNoCups();
 void showBalance(double balance);
 void showInputBynMenu();
 double inputBYN();
@@ -62,12 +63,18 @@ int main() {
 				break;
 			}
 		} else {
-			cout << "Sorry, no cups" << endl;
-
+			showMainMenuNoCups();
+			cin >> userChoice;
+			if (userChoice == 5) {
+				cout << "Service" << endl;
+				break;
+			} else {
+				cout << "Input [5], please" << endl;
+				break;
+			}
 			break;
 		}
 	}
-
 	return 0;
 }
 void showBalance(double balance) {
@@ -81,7 +88,7 @@ void showMainMenu() {
 	cout << "|1| Deposit money" << endl;
 	cout << "|2| Espresso          1 BYN" << endl;
 	cout << "|3| Cappuccino        1,5 BYN" << endl;
-	cout << "|4| Latte             1,5 BYN"<< endl;
+	cout << "|4| Latte             1,5 BYN" << endl;
 	cout << "|5| Service" << endl;
 	cout << "********************************" << endl;
 
@@ -89,14 +96,23 @@ void showMainMenu() {
 	//cout << "5 Service" << endl;
 }
 
+void showMainMenuNoCups() {
+	cout << "********************************" << endl;
+	cout << "We are very sorry," << endl << "but there are no cups left" << endl;
+	cout << "********************************" << endl;
+	cout << "|5| Service" << endl;
+	cout << "********************************" << endl;
+}
+
 void showInputBynMenu() {
 	cout << "********************************" << endl;
 	cout << "Please, deposit coins" << endl;
-	cout << "!!! Pay attention that the machine" << endl << "doesn't give change!" << endl << endl;
+	cout << "!!! Pay attention that the machine" << endl
+			<< "doesn't give change!" << endl << endl;
 	cout << "|1|  10 coins" << endl;
 	cout << "|2|  20 coins" << endl;
 	cout << "|3|  50 coins" << endl;
-	cout << "|4|  1 BYN"<< endl;
+	cout << "|4|  1 BYN" << endl;
 	cout << "|5|  2 BYN" << endl;
 	cout << "********************************" << endl;
 }
@@ -106,7 +122,7 @@ double inputBYN() {
 	double byn = 0.0;
 	int button = 0;
 	cin >> button;
-	switch (button){
+	switch (button) {
 	case 1:
 		byn = 0.1;
 		break;
