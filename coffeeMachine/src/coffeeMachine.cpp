@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <windows.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -32,6 +33,7 @@ int main() {
 			cin >> userChoice;
 			if (userChoice == 1) {
 				showBalance(balance);
+
 				balance += inputBYN();
 			} else if (userChoice == 2) {
 				if (balance >= COST_ESPRESSO) {
@@ -61,7 +63,7 @@ int main() {
 				cout << "Service" << endl;
 				break;
 			} else {
-				cout << "Input [1..5], please" << endl; //потом убрать
+				cout << "Input [1..5], please" << endl;
 				break;
 			}
 		} else {
@@ -71,7 +73,7 @@ int main() {
 				cout << "Service" << endl;
 				break;
 			} else {
-				cout << "Input [5], please" << endl; //потом убрать
+				cout << "Input [5], please" << endl;
 				break;
 			}
 			break;
@@ -97,7 +99,8 @@ void showMainMenu() {
 
 void showMainMenuNoCups() {
 	cout << "********************************" << endl;
-	cout << "We are very sorry," << endl << "but there are no cups left" << endl;
+	cout << "We are very sorry," << endl << "but there are no cups left"
+			<< endl;
 	cout << "********************************" << endl;
 	cout << "|5| Service" << endl;
 	cout << "********************************" << endl;
@@ -143,22 +146,61 @@ double inputBYN() {
 }
 
 void makeEspresso() {
-	cout << "Coffee";
+	cout << "Please, wait for a few seconds!" << endl
+			<< "Your Espresso is being prepared now!" << endl;
 	progressBar();
-	cout << "Here is the best Espresso in the city! Help yourself" << endl;
+	cout << "Here is the best Espresso in the city! Help yourself!" << endl;
+	system("pause>nul");
 }
-void makeCappuccino() {
-	cout << "Cappuccino" << endl;
-}
-void makeLatte() {
-	cout << "Latte" << endl;
-}
-void progressBar(){
-	for (int i = 0; i <= 10; i++){
-		cout << "." << flush;
-		Sleep(1000);
-		}
-	cout << endl;
-	}
 
+void makeCappuccino() {
+	cout << "Please, wait for a few seconds!" << endl
+			<< "Your Cappuccino is being prepared now!" << endl;
+	progressBar();
+	cout << "Here is the best Cappuccino in the city! Help yourself!" << endl;
+	system("pause>nul");
+}
+
+void makeLatte() {
+	cout << "Please, wait for a few seconds!" << endl
+			<< "Your Latte is being prepared now!" << endl;
+	progressBar();
+	cout << "Here is the best Latte in the city! Help yourself!" << endl;
+	system("pause>nul");
+}
+
+void progressBar() {
+	int time = 500;
+	cout << "         $     $     $" << endl << flush;
+	Sleep(time);
+	cout << "          $     $     $" << endl << flush;
+	Sleep(time);
+	cout << "           $     $     $" << endl << flush;
+	Sleep(time);
+	cout << "          $     $     $" << endl << flush;
+	Sleep(time);
+	cout << "         $     $    $" << endl << flush;
+	Sleep(time);
+	cout << "     $$$$$$$$$$$$$$$$$$$$" << endl;
+	Sleep(time);
+	cout << "     $                  $" << endl;
+	Sleep(time);
+	cout << "   $$$                  $" << endl;
+	Sleep(time);
+	cout << " $                      $" << endl;
+	Sleep(time);
+	cout << "$  $$                   $" << endl;
+	Sleep(time);
+	cout << "$ $ $                   $" << endl;
+	Sleep(time);
+	cout << "$  $$                   $" << endl;
+	Sleep(time);
+	cout << " $                      $" << endl;
+	Sleep(time);
+	cout << "   $$$                  $" << endl;
+	Sleep(time);
+	cout << "      $                $" << endl;
+	Sleep(time);
+	cout << "       $$$$$$$$$$$$$$$$" << endl;
+}
 
