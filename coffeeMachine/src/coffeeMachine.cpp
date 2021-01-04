@@ -63,18 +63,12 @@ int main() {
 			} else if (userChoice == 5) {
 				cout << "Service" << endl;
 				break;
-			} else {
-				cout << "Input [1..5], please" << endl;
-				break;
 			}
 		} else {
 			showMainMenuNoCups();
 			cin >> userChoice;
 			if (userChoice == 5) {
 				cout << "Service" << endl;
-				break;
-			} else {
-				cout << "Input [5], please" << endl;
 				break;
 			}
 			break;
