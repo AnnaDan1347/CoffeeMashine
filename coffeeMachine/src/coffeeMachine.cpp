@@ -83,32 +83,34 @@ int main() {
 	return 0;
 }
 void showBalance(double balance) {
-	cout << "********************************" << endl;
+	cout << "**********************************" << endl;
 	cout << "BALANCE: " << balance << " BYN" << endl;
 }
 
 void showMainMenu() {
-	cout << "********************************" << endl;
+	cout << "**********************************" << endl;
 	cout << "Dear customer, make your choice:" << endl << endl;
+	cout << "If there's not enough money, " << endl
+		<< "you should top up the balance first." << endl << endl;
 	cout << "|1| Deposit money" << endl;
 	cout << "|2| Espresso          1 BYN" << endl;
 	cout << "|3| Cappuccino        1,5 BYN" << endl;
 	cout << "|4| Latte             1,5 BYN" << endl;
 	cout << "|5| Service" << endl;
-	cout << "********************************" << endl;
+	cout << "**********************************" << endl;
 }
 
 void showMainMenuNoCups() {
-	cout << "********************************" << endl;
+	cout << "**********************************" << endl;
 	cout << "We are very sorry," << endl << "but there are no cups left"
 			<< endl;
-	cout << "********************************" << endl;
+	cout << "**********************************" << endl;
 	cout << "|5| Service" << endl;
-	cout << "********************************" << endl;
+	cout << "**********************************" << endl;
 }
 
 void showInputBynMenu() {
-	cout << "********************************" << endl;
+	cout << "**********************************" << endl;
 	cout << "Please, deposit coins" << endl;
 	cout << "!!! Pay attention that the machine" << endl
 			<< "doesn't give change!" << endl << endl;
@@ -117,7 +119,7 @@ void showInputBynMenu() {
 	cout << "|3|  50 coins" << endl;
 	cout << "|4|  1 BYN" << endl;
 	cout << "|5|  2 BYN" << endl;
-	cout << "********************************" << endl;
+	cout << "**********************************" << endl;
 }
 
 double inputBYN() {
@@ -148,9 +150,9 @@ double inputBYN() {
 
 void makeCoffeeMenu() {
 	cout << "Please, wait for a few seconds!" << endl
-				<< "Your coffee is being prepared now!" << endl;
-		progressBar();
-		cout << "Here is the best coffee in the city! Help yourself!" << endl;
+			<< "Your coffee is being prepared now!" << endl;
+	progressBar();
+	cout << "Here is the best coffee in the city! Help yourself!" << endl;
 }
 void makeEspresso() {
 	makeCoffeeMenu();
