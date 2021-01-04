@@ -119,6 +119,7 @@ void showInputBynMenu() {
 	cout << "|3|  50 coins" << endl;
 	cout << "|4|  1 BYN" << endl;
 	cout << "|5|  2 BYN" << endl;
+	cout << "|6|  Back to Main menu" << endl;
 	cout << "**********************************" << endl;
 }
 
@@ -142,6 +143,8 @@ double inputBYN(double &totalBalance) {
 		break;
 	case 5:
 		byn = 2.0;
+		break;
+	case 6:
 		break;
 	}
 	cout << "Ok, " << byn << " BYN is received" << endl;
