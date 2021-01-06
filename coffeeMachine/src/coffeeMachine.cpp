@@ -82,6 +82,7 @@ int main() {
 	}
 	return 0;
 }
+
 void showBalance(double balance) {
 	cout << "**********************************" << endl;
 	cout << "BALANCE: " << balance << " BYN" << endl;
@@ -147,6 +148,7 @@ double inputBYN(double &totalBalance) {
 	case 6:
 		break;
 	}
+
 	cout << "Ok, " << byn << " BYN is received" << endl;
 	totalBalance += byn;
 	return byn;
@@ -210,35 +212,42 @@ void progressBar() {
 void service(double &balance, double &totalBalance, int &cups) {
 	showServiceMenu();
 	int button = 0;
-	cin >> button;
-	switch (button) {
-	case 1: {
-		checkPIN();
-		break;
+	bool again = true;
+	while (again) {
+		cin >> button;
+		switch (button) {
+		case 1: {
+			checkPIN();
+			again = false;
+			break;
+		}
+		case 2: {
+			again = false;
+			return;
+		}
+		}
 	}
-	case 2: {
-		return;
-	}
-	}
-	while (true){
-	showPINcorrectMenu(totalBalance, cups);
-	int serviceButton = 0;
-	cin >> serviceButton;
-	switch (serviceButton) {
-	case 1:{
-		cout << "How many cups are you adding?" << endl;
-		int addedCups = 0;
-		cin >> addedCups;
-		cups += addedCups;
-		break;}
-	case 2:{
-		cout << (totalBalance + balance) << " BYN were given away" << endl;
-		totalBalance = 0;
-		balance = 0;
-		break;}
-	case 3:
-		return;
-	}
+	while (true) {
+		showPINcorrectMenu(totalBalance, cups);
+		int serviceButton = 0;
+		cin >> serviceButton;
+		switch (serviceButton) {
+		case 1: {
+			cout << "How many cups are you adding?" << endl;
+			int addedCups = 0;
+			cin >> addedCups;
+			cups += addedCups;
+			break;
+		}
+		case 2: {
+			cout << (totalBalance + balance) << " BYN were given away" << endl;
+			totalBalance = 0;
+			balance = 0;
+			break;
+		}
+		case 3:
+			return;
+		}
 	}
 
 }
@@ -267,7 +276,8 @@ void checkPIN() {
 }
 void showPINcorrectMenu(double &totalBalance, int &cups) {
 	cout << "**********************************" << endl;
-	cout << "Total balance of the Machine is " << totalBalance << " BYN" << endl;
+	cout << "Total balance of the Machine is " << totalBalance << " BYN"
+			<< endl;
 	cout << "There are " << cups << " cups loaded" << endl << endl;
 	cout << "Choose the option: " << endl;
 	cout << "|1|  Add cups" << endl;
