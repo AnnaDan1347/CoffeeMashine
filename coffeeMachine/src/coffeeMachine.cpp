@@ -90,7 +90,7 @@ void showBalance(double balance) {
 
 void showMainMenu() {
 	cout << "**********************************" << endl;
-	cout << "Dear customer, make your choice:" << endl << endl;
+	cout << "Dear Customer, make your choice:" << endl << endl;
 	cout << "If there's not enough money, " << endl
 			<< "you should top up the balance first." << endl << endl;
 	cout << "|1| Deposit money" << endl;
