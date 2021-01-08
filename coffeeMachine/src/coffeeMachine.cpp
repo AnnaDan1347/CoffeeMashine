@@ -10,7 +10,7 @@ using namespace std;
 #define COST_CAPPUCCINO 1.5
 #define COST_LATTE 1.5
 #define PIN 1234
-#define CUPS 7
+#define CUPS 1
 
 void showMainMenu();
 void showMainMenuNoCups();
@@ -236,7 +236,8 @@ void service(double &balance, double &totalBalance, int &cups) {
 			cout << "How many cups are you adding?" << endl;
 			int addedCups = 0;
 			cin >> addedCups;
-			cups += addedCups;
+			if (addedCups > 0){
+			cups += addedCups;}
 			break;
 		}
 		case 2: {
@@ -268,7 +269,9 @@ void checkPIN() {
 			break;
 		} else {
 			++i;
+			if (i!=3){
 			showPINisWrongMenu();
+			}
 		}
 	}
 	if (i == 3)
@@ -289,6 +292,7 @@ void showPINcorrectMenu(double &totalBalance, int &cups) {
 void showPINisWrongMenu() {
 	cout << "**********************************" << endl;
 	cout << "PIN is wrong, please, input PIN" << endl << endl;
+
 	cout << "**********************************" << endl;
 }
 void blockTheMachine() {
